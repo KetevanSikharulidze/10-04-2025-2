@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
-import com.example.myapplication.ViewPagerAdapter
+import com.example.myapplication.adapters.ViewPagerAdapter
 import com.example.myapplication.databinding.FragmentProfileBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -31,7 +31,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             if (isAdded){
-                var viewPagerAdapter = ViewPagerAdapter(requireActivity(), flist)
+                val viewPagerAdapter = ViewPagerAdapter(requireActivity(), flist)
                 vp.adapter  = viewPagerAdapter
 
                 val tlist = listOf(
@@ -44,10 +44,7 @@ class ProfileFragment : Fragment() {
 
                 }.attach()
             }
-
-
         }
-
     }
     companion object {
         @JvmStatic
